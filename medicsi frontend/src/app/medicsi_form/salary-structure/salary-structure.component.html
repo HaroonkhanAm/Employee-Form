@@ -1,0 +1,187 @@
+<div fxLayout="column" fxLayoutGap="20px">
+  <form [formGroup]="salaryStructure">
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <!-- Salary Type Section -->
+        <div>
+          <mat-label>Salary Type</mat-label>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <mat-form-field fxFlex="43%">
+            <mat-select placeholder="Salary" formControlName="type">
+              <mat-option value="Option1">Option1</mat-option>
+              <mat-option value="Option2">Option2</mat-option>
+              <mat-option value="Option3">Option3</mat-option>
+              <mat-option value="Option4">Option4</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field fxFlex="43%">
+            <input
+              matInput
+              type="number"
+              placeholder="Leave Custom"
+              formControlName="leaveCustom"
+            />
+          </mat-form-field>
+          <mat-checkbox formControlName="leaveNotPaid" fxFlex="15%"
+            >Leave Not Paid</mat-checkbox
+          >
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <mat-form-field fxFlex="33%">
+            <mat-select placeholder="Basic Hours" formControlName="basicHours">
+              <mat-option value="Option1">Option1</mat-option>
+              <mat-option value="Option2">Option2</mat-option>
+              <mat-option value="Option3">Option3</mat-option>
+              <mat-option value="Option4">Option4</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field fxFlex="33%">
+            <input
+              matInput
+              type="number"
+              placeholder="Salary"
+              formControlName="salary"
+            />
+          </mat-form-field>
+          <mat-form-field fxFlex="33%">
+            <input
+              matInput
+              type="number"
+              placeholder="Overtime Rate per hour (%)"
+              formControlName="overtimeRatePerHour"
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Allowance Section -->
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <div>
+          <mat-label>Allowance</mat-label>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <mat-form-field fxFlex="33%">
+            <input
+              matInput
+              type="number"
+              placeholder="Conveyance Amount"
+              formControlName="conveyanceAmount"
+            />
+          </mat-form-field>
+          <mat-form-field fxFlex="33%">
+            <input
+              matInput
+              type="number"
+              placeholder="Education Amount"
+              formControlName="educationAmount"
+            />
+          </mat-form-field>
+          <mat-form-field fxFlex="33%">
+            <input
+              matInput
+              type="number"
+              placeholder="Hostel/House Rent"
+              formControlName="hostelRent"
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Deductions Section -->
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <div>
+          <mat-label>Deductions</mat-label>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <mat-form-field fxFlex="25%">
+            <input
+              matInput
+              type="number"
+              placeholder="OEBI Deduction"
+              formControlName="oebiDeduction"
+            />
+          </mat-form-field>
+          <mat-form-field fxFlex="25%">
+            <input
+              matInput
+              type="number"
+              placeholder="Loan Deduction"
+              formControlName="loanDeduction"
+            />
+          </mat-form-field>
+          <mat-form-field fxFlex="25%">
+            <input
+              matInput
+              type="number"
+              placeholder="Transport Deduction"
+              formControlName="transportDeduction"
+            />
+          </mat-form-field>
+          <mat-form-field fxFlex="25%">
+            <input
+              matInput
+              type="number"
+              placeholder="Cafeteria Bill"
+              formControlName="cafeteriaBill"
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Leave Section -->
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <div>
+          <mat-label>Leave</mat-label>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <mat-form-field fxFlex="50%">
+            <input
+              matInput
+              type="number"
+              placeholder="Annual Leave"
+              formControlName="annualLeave"
+            />
+          </mat-form-field>
+          <mat-form-field fxFlex="50%">
+            <input
+              matInput
+              type="number"
+              placeholder="Sick Leave"
+              formControlName="sickLeave"
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Bank Section -->
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <div>
+          <mat-label>Bank</mat-label>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <mat-form-field fxFlex="50%">
+            <input matInput placeholder="Bank" formControlName="bankName" />
+          </mat-form-field>
+          <mat-form-field fxFlex="50%">
+            <mat-select
+              placeholder="Mode Of Payment"
+              formControlName="modeOfPayment"
+            >
+              <mat-option value="Option1">Check</mat-option>
+              <mat-option value="Option2">Online Banking</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>

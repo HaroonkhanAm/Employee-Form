@@ -1,0 +1,39 @@
+<div class="card-container">
+  <mat-card class="custom-card">
+    <mat-tab-group
+      animationDuration="0ms"
+      mat-stretch-tabs="false"
+      mat-align-tabs="start"
+    >
+      <mat-tab label="General Info"
+        ><app-general-info
+          [generalInfo]="medicsiFormGroup.get('generalInfo')"
+        ></app-general-info
+      ></mat-tab>
+      <mat-tab label="Job Description"
+        ><app-job-description
+          [jobDescription]="medicsiFormGroup.get('jobDescription')"
+        ></app-job-description
+      ></mat-tab>
+      <mat-tab label="Salary Structure"
+        ><app-salary-structure
+          [salaryStructure]="medicsiFormGroup.get('salaryStructure')"
+        ></app-salary-structure
+      ></mat-tab>
+      <mat-tab label="Employee View"><app-employee-view /> </mat-tab>
+    </mat-tab-group>
+
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="10px">
+      <button class="form-button" mat-raised-button (click)="save()">
+        save
+      </button>
+      <button
+        class="form-button"
+        mat-raised-button
+        (click)="medicsiFormGroup.reset()"
+      >
+        Cancel
+      </button>
+    </div>
+  </mat-card>
+</div>

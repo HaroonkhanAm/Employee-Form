@@ -1,0 +1,81 @@
+<div fxLayoutAlign="center">
+  <h1>Employee Information</h1>
+</div>
+
+<table mat-table [dataSource]="employees" class="mat-elevation-z8">
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let employee">{{ employee.id }}</td>
+  </ng-container>
+
+  <!-- Employee Number Column -->
+  <ng-container matColumnDef="employeeNumber">
+    <th mat-header-cell *matHeaderCellDef>Employee Number</th>
+    <td mat-cell *matCellDef="let employee">{{ employee.employeeNumber }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let employee">{{ employee.name }}</td>
+  </ng-container>
+
+  <!-- CNIC Column -->
+  <ng-container matColumnDef="cnic">
+    <th mat-header-cell *matHeaderCellDef>CNIC</th>
+    <td mat-cell *matCellDef="let employee">{{ employee.cnic }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="cnicExpiryDate">
+    <th mat-header-cell *matHeaderCellDef>CNIC ExpiryDate</th>
+    <td mat-cell *matCellDef="let employee">{{ employee.cnicExpiryDate }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="salary">
+    <th mat-header-cell *matHeaderCellDef>Salary</th>
+    <td mat-cell *matCellDef="let employee">{{ employee.salary }}</td>
+  </ng-container>
+
+  <!-- Header and Row Definitions -->
+  <tr mat-header-row *matHeaderRowDef="generalInfoColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: generalInfoColumns"></tr>
+</table>
+
+<div fxLayoutAlign="space-around center">
+  <h1>Salary Information</h1>
+</div>
+
+<mat-table [dataSource]="employees" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="salary">
+    <mat-header-cell *matHeaderCellDef> Salary </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.salary }} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="type">
+    <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.type }} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="bankName">
+    <mat-header-cell *matHeaderCellDef> Bank Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.bankName }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="modeOfPayment">
+    <mat-header-cell *matHeaderCellDef>MOD</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.modeOfPayment }} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="salaryStructureColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: salaryStructureColumns"></mat-row>
+</mat-table>

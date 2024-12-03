@@ -1,0 +1,440 @@
+<div>
+  <form [formGroup]="generalInfo" fxLayout="column">
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+          <img src="" alt="Upload Image" class="profile-pic" />
+          <button type="button" mat-raised-button class="form-button">
+            Upload
+          </button>
+        </div>
+
+        <!-- Type (Radio Buttons) -->
+        <div fxLayout="row" fxLayoutGap="20px">
+          <mat-radio-group formControlName="type" fxFlex="32">
+            <mat-radio-button value="employee">Employee</mat-radio-button>
+            <mat-radio-button value="consultant">Consultant</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <!-- Employee Details -->
+        <div fxLayout="column" fxLayoutGap="20px">
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="32">
+              <input
+                matInput
+                placeholder="Employee Number"
+                formControlName="employeeNumber"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="32">
+              <input matInput placeholder="CNIC" formControlName="cnic" />
+            </mat-form-field>
+            <mat-form-field fxFlex="32">
+              <input
+                matInput
+                [matDatepicker]="cnicDate"
+                placeholder="CNIC Expiry Date"
+                formControlName="cnicExpiryDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="cnicDate"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #cnicDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="32">
+              <input matInput placeholder="Name" formControlName="name" />
+            </mat-form-field>
+            <mat-form-field fxFlex="32">
+              <mat-select placeholder="Relation" formControlName="relation">
+                <mat-option value="s/o">S/O</mat-option>
+                <mat-option value="d/o">D/O</mat-option>
+                <mat-option value="w/o">W/O</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field fxFlex="32">
+              <input
+                matInput
+                placeholder="Relation Name"
+                formControlName="relationName"
+              />
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="32">
+              <mat-select placeholder="Religion" formControlName="religion">
+                <mat-option value="islam">Muslim</mat-option>
+                <mat-option value="christianity">Christian</mat-option>
+                <mat-option value="hinduism">Hindu</mat-option>
+                <mat-option value="other">Other</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field fxFlex="32">
+              <mat-select placeholder="Gender" formControlName="gender">
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+                <mat-option value="other">Other</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field fxFlex="32">
+              <mat-select
+                placeholder="Employee For"
+                formControlName="employeeFor"
+              >
+                <mat-option value="hospital">Hospital</mat-option>
+                <mat-option value="Option2">Option2</mat-option>
+                <mat-option value="Option3">Option3</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Additional Details -->
+        <div fxLayout="column" fxLayoutGap="20px">
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="49">
+              <mat-select
+                placeholder="Marital Status"
+                formControlName="maritalStatus"
+              >
+                <mat-option value="single">Single</mat-option>
+                <mat-option value="married">Married</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <!-- <mat-form-field fxFlex="49">
+              <mat-select placeholder="Languages" formControlName="languages">
+                <mat-option value="English">English</mat-option>
+                <mat-option value="Urdu">Urdu</mat-option>
+                <mat-option value="Punjabi">Punjabi</mat-option>
+                <mat-option value="Pashto">Pashto</mat-option>
+              </mat-select>
+            </mat-form-field> -->
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                placeholder="Passport Number"
+                formControlName="passportNumber"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                [matDatepicker]="passportDate"
+                placeholder="Passport Expiry Date"
+                formControlName="passportExpiryDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="passportDate"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #passportDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                placeholder="Registration Number"
+                formControlName="registrationNumber"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                [matDatepicker]="validityDate"
+                placeholder="Validity"
+                formControlName="validity"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="validityDate"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #validityDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="49">
+              <input matInput placeholder="PMDC" formControlName="pmdc" />
+            </mat-form-field>
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                [matDatepicker]="PMDCDate"
+                placeholder="PMDC Expiry Date"
+                formControlName="pmdcExpiryDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="PMDCDate"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #PMDCDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="49">
+              <input matInput placeholder="PNC" formControlName="pnc" />
+            </mat-form-field>
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                [matDatepicker]="PNCDate"
+                placeholder="PNC Expiry Date"
+                formControlName="pncExpiryDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="PNCDate"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #PNCDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                placeholder="Driving Licence"
+                formControlName="drivingLicence"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                [matDatepicker]="licenceDate"
+                placeholder="Driving Licence Expiry Date"
+                formControlName="drivingLicenceExpiryDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="licenceDate"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #licenceDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                [matDatepicker]="DOBDate"
+                placeholder="DOB"
+                formControlName="dob"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="DOBDate"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #DOBDate></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                placeholder="Blood Group"
+                formControlName="bloodGroup"
+              />
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="25">
+              <input matInput placeholder="Email" formControlName="email" />
+            </mat-form-field>
+            <mat-form-field fxFlex="25">
+              <input
+                matInput
+                type="number"
+                placeholder="Land Line"
+                formControlName="landLine"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="25">
+              <input
+                matInput
+                type="number"
+                placeholder="Mobile Number"
+                formControlName="mobileNumber"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="25">
+              <input
+                matInput
+                type="number"
+                placeholder="Fax"
+                formControlName="fax"
+              />
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="49">
+              <input matInput placeholder="Address" formControlName="address" />
+            </mat-form-field>
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                [matDatepicker]="joiningDate"
+                placeholder="Joining Date"
+                formControlName="joiningDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="joiningDate"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #joiningDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div
+          formArrayName="qualifications"
+          fxLayout="column"
+          fxLayoutGap="20px"
+        >
+          <mat-label>Qualification</mat-label>
+          <div
+            *ngFor="let qualification of qualifications.controls; let i = index"
+            [formGroupName]="i"
+            fxLayout="row"
+            fxLayoutGap="20px"
+          >
+            <mat-form-field fxFlex="33">
+              <input matInput placeholder="Degree" formControlName="degree" />
+            </mat-form-field>
+            <mat-form-field fxFlex="33">
+              <input
+                matInput
+                placeholder="Institute Name"
+                formControlName="instituteName"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="33">
+              <input
+                matInput
+                type="number"
+                placeholder="Year"
+                formControlName="year"
+              />
+            </mat-form-field>
+            <button
+              type="button"
+              mat-icon-button
+              (click)="removeQualification(i)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="end center">
+            <button
+              type="button"
+              mat-raised-button
+              (click)="addQualification()"
+            >
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <div formArrayName="experiences" fxLayout="column" fxLayoutGap="20px">
+          <mat-label>Experience</mat-label>
+          <div
+            *ngFor="let experience of experiences.controls; let i = index"
+            [formGroupName]="i"
+            fxLayout="row"
+            fxLayoutGap="20px"
+          >
+            <mat-form-field fxFlex="33">
+              <input
+                matInput
+                placeholder="Designation"
+                formControlName="designation"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="33">
+              <input
+                matInput
+                placeholder="Organization Name"
+                formControlName="organizationName"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="33">
+              <input
+                matInput
+                type="number"
+                placeholder="Year"
+                formControlName="year"
+              />
+            </mat-form-field>
+            <button type="button" mat-icon-button (click)="removeExperience(i)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="end center">
+            <button type="button" mat-raised-button (click)="addExperience()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <div fxLayout="column" fxLayoutGap="20px">
+          <mat-label>Next Of Kin</mat-label>
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="49">
+              <input matInput placeholder="Name" formControlName="kinName" />
+            </mat-form-field>
+            <mat-form-field fxFlex="49">
+              <mat-select placeholder="Relation" formControlName="kinRelation">
+                <mat-option value="Option1">Option1</mat-option>
+                <mat-option value="Option2">Option2</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                type="number"
+                placeholder="Phone Number"
+                formControlName="kinPhoneNumber"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                type="number"
+                placeholder="Mobile Number"
+                formControlName="kinMobileNumber"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="49">
+              <input
+                matInput
+                placeholder="Occupation"
+                formControlName="kinOccupation"
+              />
+            </mat-form-field>
+          </div>
+          <mat-form-field fxFlex="49">
+            <textarea
+              matInput
+              placeholder="Address"
+              formControlName="kinAddress"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- Form Action Buttons -->
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>
